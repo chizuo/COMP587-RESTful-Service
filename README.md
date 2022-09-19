@@ -1,1 +1,1 @@
-# COMP587-Project-Servoce
+# COMP587-Project-Service
