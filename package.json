@@ -1,0 +1,30 @@
+{
+  "name": "movie-api",
+  "version": "1.0.0",
+  "description": "RESTful web service for the movie application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chizuo/COMP587-Project-Service.git"
+  },
+  "keywords": [
+    "RESTful",
+    "http-service"
+  ],
+  "author": "Jonathan Chua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chizuo/COMP587-Project-Service/issues"
+  },
+  "homepage": "https://github.com/chizuo/COMP587-Project-Service#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
