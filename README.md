@@ -1,5 +1,5 @@
 # COMP 587 - RESTful Web Service
-### This RESTful API connects to the [presentation tier](https://github.com/chizuo/COMP587-Project-App) of the [system under test](https://github.com/chizuo/COMP587-Project)
+### This RESTful API connects the [presentation tier](https://github.com/chizuo/COMP587-Project-App) to the [data tier](#) of the [system under test](https://github.com/chizuo/COMP587-Project)
 
 ---
 ## Routes
