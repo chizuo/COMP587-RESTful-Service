@@ -5,6 +5,4 @@
 ## Routes
 #### `GET` movies `{host url}/v1/movie/`
 expects a preference object that is shaped...
-`{ 
-  
-}`
+`{ }`
