@@ -1,1 +1,1 @@
-# COMP587-Project-Service
+# COMP587 RESTful Web Service 
