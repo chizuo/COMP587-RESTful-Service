@@ -3,9 +3,12 @@ const express = require('express');
 
 // Instanced Objects
 const router = express.Router();
-const { requestMovie } = require('./modules/Processor');
+const { requestMovie } = require('./modules/processor');
+const { validPref } = require('./middleware/validation');
 
-router.use('/movie', async (req, res) => {
+router.use('/movie', validPref);
+
+router.get('/movie', async (req, res) => {
     const result = await requestMovie(req.body);
     if(result instanceof Error) { res.status(404).send(result.message); }
     else { res.status(201).send(result); } 

@@ -11,7 +11,6 @@ server.use('/v1', v1);
 // Exporting for unit tests rather than running as a process and listening through the port.
 module.exports = server;
 
-
 if(require.main === module) {
    // Start server only if start via command land, ignores during unit testing.
    
