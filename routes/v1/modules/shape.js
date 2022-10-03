@@ -5,6 +5,7 @@ const headers = process.env.APIv1headers || ENV.GETheaders();
 exports.Options = (jsonObj, type) => {
   const { country, service, genre, page, language, orderBy, minYear, maxYear } = jsonObj;
   var services = unBoxServices(service);
+  var genres = unBoxGenres(genre);
 
   /* Required Preferences */
   let prefObj = {
@@ -12,7 +13,7 @@ exports.Options = (jsonObj, type) => {
     service: services || 'netflix',
     type: type,
     order_by: orderBy || 'year',
-    genre: genre || '28',
+    genre: genres || '28',
     page: page || '1',
     desc: 'true',
     output_language: language || 'en',
@@ -38,4 +39,12 @@ function unBoxServices(service) {
     services = services.length ? services.concat(',',service[i]) : service[i];
   }
   return services;
+}
+
+function unBoxGenres(genre) {
+  var genres = "";
+  for(let i = 0; i < genre.lenth; i++) {
+    genres = genres.length ? genres.concat(',',genre[i]) : genre[i];
+  }
+  return genres;
 }
