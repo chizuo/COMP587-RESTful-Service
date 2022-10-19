@@ -1,7 +1,6 @@
-const { valid } = require("joi");
+const valid = require('../defaults/validValues');
 
 exports.validPref = (req, res, next) => {
-    console.log("valid Pref: ",req.body);
     if(hasData(req.body) || hasProperty(req.body)) { 
         console.log('...a request failed the properties validation');
         res.status(406).send('Preferences properties are incorrect');
@@ -28,6 +27,5 @@ function validPropertyDataType(pref) {
 }
 
 function validData(pref) {
-    console.log("validData");
     return false;
 }

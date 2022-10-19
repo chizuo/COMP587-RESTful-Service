@@ -1,9 +1,9 @@
 const { GETmovie } = require('./accessor');
-const { Options } = require('./shape');
+const Option = require('../class/option');
 
 exports.requestMovie = async (pref) => {
-    var options = Options(pref, 'movie');
+    var option = new Option(pref, 'movie');
     try {
-        return await GETmovie(options);
+        return await GETmovie(option.json());
     } catch(error) { return error; }
 }
