@@ -18,16 +18,16 @@ class Option {
         const { country, service, genre, page, language, orderBy, minYear, maxYear } = jsonObj;
         var services = this.unBoxServices(service);
         var genres = this.unBoxGenres(genre);
-
+        
         /* Required Preferences */
         let prefObj = {
             country: country || 'us',
-            service: services || 'netflix',
+            services: services || 'netflix',
             type: type,
-            //order_by: orderBy || 'year',
-            genre: genres || '28',
+            order_by: orderBy || 'year',
+            genres: genres,
             page: page || '1',
-            desc: 'true',
+            desc: 'True',
             output_language: language || 'en',
         }
 
@@ -48,7 +48,7 @@ class Option {
       
     unBoxGenres(genre) {
         var genres = "";
-        for(let i = 0; i < genre.lenth; i++) {
+        for(let i = 0; i < genre.length; i++) {
             genres = genres.length ? genres.concat(',',genre[i]) : genre[i];
         }
         return genres;
