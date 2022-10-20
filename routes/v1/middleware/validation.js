@@ -13,7 +13,8 @@ exports.validPref = (req, res, next) => {
 function hasProperty(pref) {
     return (pref.hasOwnProperty('country') && pref.hasOwnProperty('service') && 
     pref.hasOwnProperty('genre') && pref.hasOwnProperty('page') && 
-    pref.hasOwnProperty('orderBy')) && Object.keys(pref).length === 5 ? false : true;
+    pref.hasOwnProperty('orderBy')) && pref.hasOwnProperty('language')
+    && Object.keys(pref).length === 6 ? false : true;
 }
 
 function hasData(pref) {

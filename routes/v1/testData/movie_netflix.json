@@ -1,0 +1,62 @@
+{
+    "imdbID": "tt10731768",
+    "tmdbID": "619297",
+    "imdbRating": 55,
+    "imdbVoteCount": 32062,
+    "tmdbRating": 67,
+    "backdropPath": "/nprqOIEfiMMQx16lgKeLf3rmPrR.jpg",
+    "backdropURLs": {
+        "300": "https://image.tmdb.org/t/p/w300/nprqOIEfiMMQx16lgKeLf3rmPrR.jpg",
+        "780": "https://image.tmdb.org/t/p/w780/nprqOIEfiMMQx16lgKeLf3rmPrR.jpg",
+        "1280": "https://image.tmdb.org/t/p/w1280/nprqOIEfiMMQx16lgKeLf3rmPrR.jpg",
+        "original": "https://image.tmdb.org/t/p/original/nprqOIEfiMMQx16lgKeLf3rmPrR.jpg"
+    },
+    "originalTitle": "Sweet Girl",
+    "genres": [
+        28,
+        18,
+        53
+    ],
+    "countries": [
+        "US"
+    ],
+    "year": 2021,
+    "runtime": 110,
+    "cast": [
+        "Jason Momoa",
+        "Isabela Merced",
+        "Manuel Garcia-Rulfo",
+        "Amy Brenneman",
+        "Adria Arjona",
+        "Milena Rivero",
+        "Justin Bartha"
+    ],
+    "significants": [
+        "Brian Andrew Mendoza"
+    ],
+    "title": "Sweet Girl",
+    "overview": "A man vows to bring justice to those responsible for his wife's death while protecting the only family he has left, his daughter.",
+    "tagline": "Family fights as one.",
+    "video": "NiFuJV2GLkY",
+    "posterPath": "/cP7odDzzFBD9ycxj2laTeFWGLjD.jpg",
+    "posterURLs": {
+        "92": "https://image.tmdb.org/t/p/w92/cP7odDzzFBD9ycxj2laTeFWGLjD.jpg",
+        "154": "https://image.tmdb.org/t/p/w154/cP7odDzzFBD9ycxj2laTeFWGLjD.jpg",
+        "185": "https://image.tmdb.org/t/p/w185/cP7odDzzFBD9ycxj2laTeFWGLjD.jpg",
+        "342": "https://image.tmdb.org/t/p/w342/cP7odDzzFBD9ycxj2laTeFWGLjD.jpg",
+        "500": "https://image.tmdb.org/t/p/w500/cP7odDzzFBD9ycxj2laTeFWGLjD.jpg",
+        "780": "https://image.tmdb.org/t/p/w780/cP7odDzzFBD9ycxj2laTeFWGLjD.jpg",
+        "original": "https://image.tmdb.org/t/p/original/cP7odDzzFBD9ycxj2laTeFWGLjD.jpg"
+    },
+    "age": 16,
+    "streamingInfo": {
+        "netflix": {
+            "us": {
+                "link": "https://www.netflix.com/title/81058613/",
+                "added": 1629600136,
+                "leaving": 0
+            }
+        }
+    },
+    "originalLanguage": "en"
+}
