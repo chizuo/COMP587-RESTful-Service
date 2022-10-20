@@ -19,7 +19,7 @@
 ```
 {
     "results": [], (a list of movie objects)
-    "total_pages": 4 (an integer informing you how many pages worth of results the service has based on provided criteria)
+    "total_pages": 4 (an integer informing you how many pages worth of movie results)
 }
 ```
 **movie object is shaped...**
