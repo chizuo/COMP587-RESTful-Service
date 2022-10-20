@@ -1,6 +1,8 @@
 const ENV = require('../../../env/env');
 const URL = process.env.APIv1URL || ENV.GETapiURL();
 const headers = process.env.APIv1headers || ENV.GETheaders();
+const Mapper = require('../defaults/genre');
+const genre2num = Mapper.getGenreNum();
 
 class Option {
     constructor(jsonObj, type) {
@@ -22,12 +24,13 @@ class Option {
         /* Required Preferences */
         let prefObj = {
             country: country || 'us',
-            services: services || 'netflix',
+            services: this.toString(services) || 'netflix',
             type: type,
             order_by: orderBy || 'year',
-            genres: genres,
+            genres: this.toString(genres),
             page: page || '1',
             desc: 'True',
+            language: language || 'en',
             output_language: language || 'en',
         }
 
@@ -39,19 +42,27 @@ class Option {
     }
 
     unBoxServices(service) {
-        var services = "";
+        var services = [];
         for(let i = 0; i < service.length; i++) {
-          services = services.length ? services.concat(',',service[i]) : service[i];
+            services.push(service[i]);
         }
         return services;
       }
       
     unBoxGenres(genre) {
-        var genres = "";
+        var genres = [];
         for(let i = 0; i < genre.length; i++) {
-            genres = genres.length ? genres.concat(',',genre[i]) : genre[i];
+            genres.push(genre2num.get(genre[i]));
         }
         return genres;
+    }
+
+    toString(list) {
+        var result = "";
+        for(let i = 0; i < list.length; i++) {
+            result = result.length ? result.concat(',',list[i]) : list[i];
+        }
+        return result;
     }
 }
 
