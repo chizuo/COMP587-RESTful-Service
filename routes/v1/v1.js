@@ -9,7 +9,6 @@ const { validPref } = require('./middleware/validation');
 router.use('/movie', validPref);
 
 router.get('/movie', async (req, res) => {
-    console.log("Request passed validation");
     const result = await requestMovie(req.body);
     if(result instanceof Error) { res.status(404).send(result.message); }
     else { res.status(201).send(result); } 
