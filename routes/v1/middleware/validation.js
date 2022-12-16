@@ -2,10 +2,8 @@ const valid = require('../defaults/validValues');
 
 exports.validPref = (req, res, next) => {
     if(hasData(req.body) || hasProperty(req.body)) { 
-        console.log('...a request failed the properties validation');
         res.status(406).send('Preferences properties are incorrect');
     } else if(validPropertyDataType(req.body)|| validData(req.body)) {
-        console.log('...a request failed the content validation');
         res.status(400).send('Required data in preference is incorrect');
     } else { next(); }
 }

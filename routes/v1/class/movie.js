@@ -30,6 +30,9 @@ class Movie {
     streamingURL(streamingInfo) {
         if(streamingInfo.hasOwnProperty('hulu')) { return streamingInfo.hulu.us.link; }
         if(streamingInfo.hasOwnProperty('netflix')) { return streamingInfo.netflix.us.link; }
+        if(streamingInfo.hasOwnProperty('prime')) { return streamingInfo.prime.us.link; }
+        if(streamingInfo.hasOwnProperty('disney')) { return streamingInfo.disney.us.link; }
+        if(streamingInfo.hasOwnProperty('apple')) { return streamingInfo.apple.us.link; }
     }
 }
 
