@@ -6,7 +6,7 @@ const router = express.Router();
 const { requestMovie, register, authenticate } = require('./modules/processor');
 const { validPref } = require('./middleware/validation');
 
-router.use('/movie', validPref);
+router.use('/movie');
 
 router.get('/movie', async (req, res) => {
     const result = await requestMovie(req.body);
