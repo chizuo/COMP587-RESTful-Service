@@ -78,7 +78,7 @@ describe('validate-pref-object-shape', () => {
 })
 
 describe('validate-pref-object-data-type', () => {
-    test('GET with-genre-not-an-array-returns-http-400', async () => {
+    test('GET with-genre-not-an-array-returns-http-406', async () => {
         const prefObj = {
             country: 'us',
             service: ['netflix'],
@@ -90,13 +90,13 @@ describe('validate-pref-object-data-type', () => {
         await supertest(server)
             .get('/v1/movie/')
             .send(prefObj)
-            .expect(400)
+            .expect(406)
             .then(response => {
-                expect(response.text).toEqual('Required data in preference is incorrect')
+                expect(response.text).toEqual('Preferences properties are incorrect')
         })
     })
     
-    test('GET service-property-not-array-returns-http-400', async () => {
+    test('GET service-property-not-array-returns-http-406', async () => {
     const prefObj = {
         country: 'us',
         service: 'netflix',
@@ -108,9 +108,9 @@ describe('validate-pref-object-data-type', () => {
     await supertest(server)
         .get('/v1/movie/')
         .send(prefObj)
-        .expect(400)
+        .expect(406)
         .then(response => {
-            expect(response.text).toEqual('Required data in preference is incorrect')
+            expect(response.text).toEqual('Preferences properties are incorrect')
         })
     })
 
@@ -126,9 +126,9 @@ describe('validate-pref-object-data-type', () => {
         await supertest(server)
             .get('/v1/movie/')
             .send(prefObj)
-            .expect(400)
+            .expect(406)
             .then(response => {
-                expect(response.text).toEqual('Required data in preference is incorrect')
+                expect(response.text).toEqual('Preferences properties are incorrect')
             })
     })
 
@@ -144,9 +144,9 @@ describe('validate-pref-object-data-type', () => {
         await supertest(server)
             .get('/v1/movie/')
             .send(prefObj)
-            .expect(400)
+            .expect(406)
             .then(response => {
-                expect(response.text).toEqual('Required data in preference is incorrect')
+                expect(response.text).toEqual('Preferences properties are incorrect')
             })
     })
 
@@ -162,9 +162,9 @@ describe('validate-pref-object-data-type', () => {
         await supertest(server)
             .get('/v1/movie/')
             .send(prefObj)
-            .expect(400)
+            .expect(406)
             .then(response => {
-                expect(response.text).toEqual('Required data in preference is incorrect')
+                expect(response.text).toEqual('Preferences properties are incorrect')
             })
     })
 })

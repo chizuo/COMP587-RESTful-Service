@@ -9,7 +9,7 @@ exports.validPref = (req, res, next) => {
 }
 
 function hasProperty(pref) {
-    return (pref.hasOwnProperty('country') && pref.hasOwnProperty('service') && 
+    return (pref.hasOwnProperty('country') && pref.hasOwnProperty('services') && 
     pref.hasOwnProperty('genre') && pref.hasOwnProperty('page') && 
     pref.hasOwnProperty('orderBy')) && pref.hasOwnProperty('language')
     && Object.keys(pref).length === 6 ? false : true;

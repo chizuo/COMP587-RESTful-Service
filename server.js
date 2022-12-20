@@ -16,6 +16,6 @@ if(require.main === module) {
    
     const port = process.env.PORT || 1587;
     server.listen((port), () => {
-        console.log(`Service is listening at http://localhost:${port}`);
+        console.log(`Service is listening at port:${port}`);
     });
 }
