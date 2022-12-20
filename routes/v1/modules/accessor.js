@@ -26,7 +26,7 @@ exports.GETaccount = async(data) => {
         if(accountDB.has(data.email))
         {
             let details = accountDB.get(data.email);
-            if(details.password == data.password) { resolve(data); }
+            if(details.password == data.password) { resolve(details); }
             else { reject(new Error("authentication failed")); }
         } else {
             reject(new Error("account doesn't exist"));
