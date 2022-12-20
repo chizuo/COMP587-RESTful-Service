@@ -17,14 +17,14 @@ class Option {
     }
 
     buildPreferences(jsonObj, type) {
-        const { country, service, genre, page, language, orderBy, minYear, maxYear } = jsonObj;
-        var services = this.unBoxServices(service);
+        const { country, services, genre, page, language, orderBy, minYear, maxYear } = jsonObj;
+        var service = this.unBoxServices(services);
         var genres = this.unBoxGenres(genre);
         
         /* Required Preferences */
         let prefObj = {
             country: country || 'us',
-            services: this.toString(services) || 'netflix',
+            services: this.toString(service) || 'netflix',
             type: type,
             order_by: orderBy || 'year',
             genres: this.toString(genres),
