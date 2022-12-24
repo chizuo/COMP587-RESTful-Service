@@ -9,6 +9,12 @@ exports.validPref = (req, res, next) => {
 }
 
 function hasProperty(pref) {
+    console.log(`country: ${pref.hasOwnProperty('country')}`);
+    console.log(`services: ${pref.hasOwnProperty('services')}`);
+    console.log(`genre: ${pref.hasOwnProperty('genre')}`);
+    console.log(`page: ${pref.hasOwnProperty('page')}`);
+    console.log(`orderBy: ${pref.hasOwnProperty('orderBy')}`);
+    console.log(`language: ${pref.hasOwnProperty('language')}`);
     return (pref.hasOwnProperty('country') && pref.hasOwnProperty('services') && 
     pref.hasOwnProperty('genre') && pref.hasOwnProperty('page') && 
     pref.hasOwnProperty('orderBy')) && pref.hasOwnProperty('language')
@@ -16,7 +22,8 @@ function hasProperty(pref) {
 }
 
 function hasData(pref) {
-    const { country, service, genre, page, orderBy } = pref;
+    const { country, service, genre, page, orderBy, language } = pref;
+    console.log(`hasData: ${(country == null || service == null || genre == null || page == null || orderBy == null)}`);
     return (country == null || service == null || genre == null || page == null || orderBy == null) ? true : false;
 }
 
