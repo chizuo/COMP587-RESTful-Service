@@ -22,9 +22,8 @@ function hasProperty(pref) {
 }
 
 function hasData(pref) {
-    const { country, service, genre, page, orderBy, language } = pref;
-    console.log(`hasData: ${(country == null || service == null || genre == null || page == null || orderBy == null)}`);
-    return (country == null || service == null || genre == null || page == null || orderBy == null) ? true : false;
+    const { country, services, genre, page, orderBy, language } = pref;
+    return (country == null || services == null || genre == null || page == null || orderBy == null || languages == null) ? true : false;
 }
 
 function validPropertyDataType(pref) {
