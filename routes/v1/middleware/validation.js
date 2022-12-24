@@ -9,12 +9,10 @@ exports.validPref = (req, res, next) => {
 }
 
 function hasProperty(pref) {
-    console.log(`country: ${pref.hasOwnProperty('country')}`);
-    console.log(`services: ${pref.hasOwnProperty('services')}`);
-    console.log(`genre: ${pref.hasOwnProperty('genre')}`);
-    console.log(`page: ${pref.hasOwnProperty('page')}`);
-    console.log(`orderBy: ${pref.hasOwnProperty('orderBy')}`);
-    console.log(`language: ${pref.hasOwnProperty('language')}`);
+    console.log(`hasProperty: ${(pref.hasOwnProperty('country') && pref.hasOwnProperty('services') && 
+    pref.hasOwnProperty('genre') && pref.hasOwnProperty('page') && 
+    pref.hasOwnProperty('orderBy')) && pref.hasOwnProperty('language')
+    && Object.keys(pref).length === 6}`);
     return (pref.hasOwnProperty('country') && pref.hasOwnProperty('services') && 
     pref.hasOwnProperty('genre') && pref.hasOwnProperty('page') && 
     pref.hasOwnProperty('orderBy')) && pref.hasOwnProperty('language')
@@ -23,7 +21,8 @@ function hasProperty(pref) {
 
 function hasData(pref) {
     const { country, services, genre, page, orderBy, language } = pref;
-    return (country == null || services == null || genre == null || page == null || orderBy == null || languages == null) ? true : false;
+    console.log(`hasData: ${(country == null || services == null || genre == null || page == null || orderBy == null || language == null)}`);
+    return (country == null || services == null || genre == null || page == null || orderBy == null || language == null) ? true : false;
 }
 
 function validPropertyDataType(pref) {
