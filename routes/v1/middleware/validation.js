@@ -1,7 +1,6 @@
 const valid = require('../defaults/validValues');
 
 exports.validPref = (req, res, next) => {
-    console.log(`req.body: ${req.body}`);
     if(hasData(req.body) || hasProperty(req.body)) { 
         res.status(406).send('Preferences properties are incorrect');
     } else if(validPropertyDataType(req.body)|| validData(req.body)) {
@@ -10,12 +9,6 @@ exports.validPref = (req, res, next) => {
 }
 
 function hasProperty(pref) {
-    console.log(`country: ${pref.hasOwnProperty('country')}`);
-    console.log(`services: ${pref.hasOwnProperty('services')}`);
-    console.log(`genre: ${pref.hasOwnProperty('genre')}`);
-    console.log(`page: ${pref.hasOwnProperty('page')}`);
-    console.log(`orderBy: ${pref.hasOwnProperty('orderBy')}`);
-    console.log(`language: ${pref.hasOwnProperty('language')}`);
     return (pref.hasOwnProperty('country') && pref.hasOwnProperty('services') && 
     pref.hasOwnProperty('genre') && pref.hasOwnProperty('page') && 
     pref.hasOwnProperty('orderBy')) && pref.hasOwnProperty('language')
@@ -24,13 +17,12 @@ function hasProperty(pref) {
 
 function hasData(pref) {
     const { country, services, genre, page, orderBy, language } = pref;
-    console.log(`hasData: ${(country == null || services == null || genre == null || page == null || orderBy == null || language == null)}`);
     return (country == null || services == null || genre == null || page == null || orderBy == null || language == null) ? true : false;
 }
 
 function validPropertyDataType(pref) {
-    const { country, service, genre, page, orderBy } = pref;
-    return (typeof country === 'string' && Array.isArray(service) && Array.isArray(genre) && !isNaN(page) && typeof orderBy === 'string') ? false : true;
+    const { country, services, genre, page, orderBy } = pref;
+    return (typeof country === 'string' && Array.isArray(services) && Array.isArray(genre) && !isNaN(page) && typeof orderBy === 'string') ? false : true;
 }
 
 function validData(pref) {
