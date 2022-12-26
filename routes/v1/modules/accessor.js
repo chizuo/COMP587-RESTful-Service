@@ -63,3 +63,14 @@ exports.UPDATEuserBehavior = async(data) => {
         }
     });
 }
+
+exports.GETall = async(data) => {
+    return new Promise ( (resolve, reject) => {
+        let users = accountDB.values;
+        let response = [];
+        for(let i = 0; i < accountDB.size; i++) {
+            response.push(users.next().value);
+        }
+        resolve(response);
+    });
+}

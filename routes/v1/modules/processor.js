@@ -1,4 +1,4 @@
-const { GETmovie, GETaccount, POSTaccount, UPDATEaccount, UPDATEuserBehavior } = require('./accessor');
+const { GETmovie, GETaccount, GETall, POSTaccount, UPDATEaccount, UPDATEuserBehavior } = require('./accessor');
 const Option = require('../class/option');
 const Movie = require('../class/movie');
 
@@ -43,6 +43,13 @@ exports.update = async(data) => {
 exports.userData = async(data) => {
     try {
         let response = await UPDATEuserBehavior(data);
+        return response;
+    } catch(error) { return error; }
+}
+
+exports.allUsers = async(data) => {
+    try {
+        let response = await GETall(data);
         return response;
     } catch(error) { return error; }
 }

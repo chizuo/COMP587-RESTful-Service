@@ -3,7 +3,7 @@ const express = require('express');
 
 // Instanced Objects
 const router = express.Router();
-const { requestMovie, register, authenticate, update, userData } = require('./modules/processor');
+const { allUsers, authenticate, requestMovie, register, update, userData } = require('./modules/processor');
 const { validPref } = require('./middleware/validation');
 
 router.use('/movie', validPref);
@@ -36,6 +36,10 @@ router.put('/data', async (req, res) => {
     const result = await userData(req.body);
     if(result instanceof Error) { res.status(401).send(result.message); }
     else { res.status(200).json(result); }
+});
+
+router.get('/allusers', async (req, res) => {
+    res.status(200).json(await allUsers(req.body));
 });
 
 module.exports = router;
