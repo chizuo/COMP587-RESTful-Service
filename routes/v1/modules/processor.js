@@ -47,9 +47,10 @@ exports.userData = async(data) => {
     } catch(error) { return error; }
 }
 
-exports.allUsers = async(data) => {
+exports.allUsers = async() => {
     try {
-        let response = await GETall(data);
+        console.log('allUsers()');
+        let response = await GETall();
         return response;
     } catch(error) { return error; }
 }

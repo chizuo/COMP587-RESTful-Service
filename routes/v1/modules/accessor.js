@@ -64,12 +64,13 @@ exports.UPDATEuserBehavior = async(data) => {
     });
 }
 
-exports.GETall = async(data) => {
+exports.GETall = async() => {
     return new Promise ( (resolve, reject) => {
-        let users = accountDB.values;
+        let users = accountDB.values();
         let response = [];
         for(let i = 0; i < accountDB.size; i++) {
-            response.push(users.next().value);
+            let content = users.next().value;
+            response.push(content);
         }
         resolve(response);
     });

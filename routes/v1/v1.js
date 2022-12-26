@@ -39,7 +39,9 @@ router.put('/data', async (req, res) => {
 });
 
 router.get('/allusers', async (req, res) => {
-    res.status(200).json(await allUsers(req.body));
+    console.log('/v1/allusers');
+    const result = await allUsers();
+    res.status(200).json(result);
 });
 
 module.exports = router;
