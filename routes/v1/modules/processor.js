@@ -1,4 +1,4 @@
-const { GETmovie, GETaccount, POSTaccount } = require('./accessor');
+const { GETmovie, GETaccount, POSTaccount, UPDATEaccount, UPDATEuserBehavior } = require('./accessor');
 const Option = require('../class/option');
 const Movie = require('../class/movie');
 
@@ -23,12 +23,26 @@ exports.register = async(data) => {
     try {
         let response = await POSTaccount(data);
         return response;
-    } catch (error) { return error;} 
+    } catch (error) { return error; } 
 }
 
 exports.authenticate = async(data) => {
     try {
         let response = await GETaccount(data);
         return response;
-    } catch (error) { return error;} 
+    } catch (error) { return error; } 
+}
+
+exports.update = async(data) => {
+    try {
+        let response = await UPDATEaccount(data);
+        return response;
+    } catch (error) { return error; }
+}
+
+exports.userData = async(data) => {
+    try {
+        let response = await UPDATEuserBehavior(data);
+        return response;
+    } catch(error) { return error; }
 }

@@ -33,3 +33,33 @@ exports.GETaccount = async(data) => {
         }
     });
 }
+
+exports.UPDATEaccount = async(data) => {
+    return new Promise( (resolve, reject) => {
+        if(accountDB.has(data.email))
+        {
+            let details = accountDB.get(data.email);
+            if(details.password = data.password) {
+                if(data.hasOwnProperty("country")) { details.country = data.country; }
+                if(data.hasOwnProperty("name")) { details.name = data.name; }
+                if(data.hasOwnProperty("services")) { details.services = data.services; }
+                if(data.hasOwnProperty("updatedpw")) { details.password = data.updatedpw; }
+                accountDB.set(data.email, details);
+                resolve(accountDB.get(data.email));
+            } else { reject(new Error("authentication failed")); }
+        } else {
+            reject(new Error("account doesn't exist"));
+        }
+    });
+}
+
+exports.UPDATEuserBehavior = async(data) => {
+    return new Promise ( (resolve, reject) => {
+        let details = accountDB.get(data.email);
+        if(details.password = data.password) { 
+            details.genre_habits = data. genre_habits;
+        } else {
+            reject(new Error("authentication failed"));
+        }
+    });
+}
