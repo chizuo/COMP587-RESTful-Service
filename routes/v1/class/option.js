@@ -28,7 +28,7 @@ class Option {
             type: type,
             order_by: orderBy || 'year',
             genres: this.toString(genres),
-            genre_relation: 'or',
+            genres_relation: 'or',
             page: page || '1',
             desc: 'True',
             language: language || 'en',
