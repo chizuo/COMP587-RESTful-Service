@@ -18,8 +18,8 @@ class Option {
 
     buildPreferences(jsonObj, type) {
         const { country, services, genre, page, language, orderBy, minYear, maxYear } = jsonObj;
-        var service = this.unBoxServices(services);
-        var genres = this.unBoxGenres(genre);
+        let service = this.unBoxServices(services);
+        let genres = this.unBoxGenres(genre);
         
         /* Required Preferences */
         let prefObj = {
@@ -42,15 +42,15 @@ class Option {
     }
 
     unBoxServices(service) {
-        var services = [];
+        let serviceList = [];
         for(let i = 0; i < service.length; i++) {
-            services.push(service[i]);
+            serviceList.push(service[i]);
         }
-        return services;
+        return serviceList;
       }
       
     unBoxGenres(genre) {
-        var genres = [];
+        let genres = [];
         for(let i = 0; i < genre.length; i++) {
             genres.push(genre2num.get(genre[i]));
         }
@@ -58,7 +58,7 @@ class Option {
     }
 
     toString(list) {
-        var result = "";
+        let result = "";
         for(let i = 0; i < list.length; i++) {
             result = result.length ? result.concat(',',list[i]) : list[i];
         }
