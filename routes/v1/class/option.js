@@ -58,7 +58,7 @@ class Option {
     }
 
     toString(list) {
-        const result = "";
+        let result = "";
         for(let i = 0; i < list.length; i++) {
             result = result.length ? result.concat(',',list[i]) : list[i];
         }
