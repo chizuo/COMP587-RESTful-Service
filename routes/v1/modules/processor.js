@@ -49,7 +49,6 @@ exports.userData = async(data) => {
 
 exports.allUsers = async() => {
     try {
-        console.log('allUsers()');
         let response = await GETall();
         return response;
     } catch(error) { return error; }
