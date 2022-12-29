@@ -57,7 +57,8 @@ exports.UPDATEuserBehavior = async(data) => {
     return new Promise ( (resolve, reject) => {
         let details = accountDB.get(data.email);
         if(details.password = data.password) { 
-            details.genre_habits = data. genre_habits;
+            details.genre_habits = data.genre_habits;
+            resolve(data);
         } else {
             reject(new Error("authentication failed"));
         }
